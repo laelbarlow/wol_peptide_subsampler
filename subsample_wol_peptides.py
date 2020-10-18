@@ -144,11 +144,16 @@ if __name__ == '__main__':
     # define FASTA output subdir.
     faa_output_subdir = os.path.join(outdir, 'peptide_seqs_subsample')
 
+    # Initiate list of genome IDs not found.
+    gids_not_found = genome_ids
+
     # Iterate over compressed FASTA files in input directory.
-    for f in glob.glob(peptide_zip_file_dir):
+    for f in glob.glob(os.path.join(peptide_zip_file_dir, '*.bz2'):
         gid = f.split('.')[0]
         print(gid)
         if gid in genome_ids:
+            # Remove from not found list.
+            gids_not_found.remove(gid)
             # Define name of new file.
             f2_bn = gid + '_' + genome_names[gid] + '.faa.bz2' 
             f2 = os.path.join(faa_output_subdir, f2_bn) 
@@ -157,5 +162,10 @@ if __name__ == '__main__':
             shutil.copyfile(f, f2)
             # Unzip file copy.
             #subprocess.call(['bzip2', '-d', f2])
+
+    # Check that all the relevant files were found.
+    assert len(gids_not_found) == 0, """Could not identify files with the
+    following genome numbers:
+%s""" % '\n'.join(gids_not_found)
          
 
