@@ -64,12 +64,12 @@ script does.
 
 - Clone this repository.
     ```
-    git clone ...
+    git clone https://github.com/laelbarlow/wol_peptide_subsampler.git
     ```
 
 - Change directories into the repository.
     ```
-    cd ...
+    cd wol_peptide_subsampler
     ```
 
 - Subsample the protein sequence files according to measures of quality and
