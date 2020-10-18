@@ -139,8 +139,9 @@ if __name__ == '__main__':
     for index, row in combined_df.iterrows():
         genome_names[row['#genome']] = row['unique_name']
 
-    # define FASTA output subdir.
+    # Make FASTA output subdir.
     faa_output_subdir = os.path.join(outdir, 'peptide_seqs_subsample')
+    os.mkdir(faa_output_subdir)
 
     # Initiate list of genome IDs not found.
     gids_not_found = genome_ids
