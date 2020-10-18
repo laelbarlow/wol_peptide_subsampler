@@ -148,7 +148,7 @@ if __name__ == '__main__':
     gids_not_found = genome_ids
 
     # Iterate over compressed FASTA files in input directory.
-    for f in glob.glob(os.path.join(peptide_zip_file_dir, '*.bz2'):
+    for f in glob.glob(os.path.join(peptide_zip_file_dir, '*.bz2')):
         gid = f.split('.')[0]
         print(gid)
         if gid in genome_ids:
