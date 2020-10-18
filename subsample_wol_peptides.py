@@ -133,13 +133,11 @@ if __name__ == '__main__':
 
     # Define list of relevant genome IDs.
     genome_ids = list(combined_df['#genome'])
-    print(genome_ids)
 
     # Define unique names corresponding to each genome ID.
     genome_names = {}
     for index, row in combined_df.iterrows():
         genome_names[row['#genome']] = row['unique_name']
-    print(genome_names)
 
     # define FASTA output subdir.
     faa_output_subdir = os.path.join(outdir, 'peptide_seqs_subsample')
@@ -150,14 +148,12 @@ if __name__ == '__main__':
     # Iterate over compressed FASTA files in input directory.
     for f in glob.glob(os.path.join(peptide_zip_file_dir, '*.bz2')):
         gid = f.split('.')[0]
-        print(gid)
         if gid in genome_ids:
             # Remove from not found list.
             gids_not_found.remove(gid)
             # Define name of new file.
             f2_bn = gid + '_' + genome_names[gid] + '.faa.bz2' 
             f2 = os.path.join(faa_output_subdir, f2_bn) 
-            print(f2)
             # Copy file to new path. 
             shutil.copyfile(f, f2)
             # Unzip file copy.
