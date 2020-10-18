@@ -153,7 +153,9 @@ if __name__ == '__main__':
             # Remove from not found list.
             gids_not_found.remove(gid)
             # Define name of new file.
-            f2_bn = gid + '_' + genome_names[gid].replace(' ', '_') + '.faa.bz2' 
+            f2_bn = gid + '_' + \
+                    genome_names[gid].replace(' ', '_').replace('/', '_') + \
+                    '.faa.bz2' 
             f2 = os.path.join(faa_output_subdir, f2_bn) 
             # Copy file to new path. 
             shutil.copyfile(f, f2)
