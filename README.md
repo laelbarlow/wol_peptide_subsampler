@@ -80,12 +80,12 @@ script does.
 
 - Examine the CSV file with information for only the subsampled genomes here:
    ```
-   ...
+   results/metadata_subsample.csv
    ```
 
-- Proceed with downstream analysis of the selected peptide FASTA file here:
+- Proceed with downstream analysis of the selected peptide FASTA files here:
     ```
-    ...
+    results/peptide_seqs_subsample/
     ```
 
 
