@@ -9,6 +9,7 @@ import os
 import sys
 import subprocess
 import glob
+import shutil
 import pandas as pd
 
 
@@ -148,6 +149,7 @@ if __name__ == '__main__':
             # Define name of new file.
             f2_bn = gid + '_' + genome_names[gid] + '.faa.bz2' 
             f2 = os.path.join(faa_output_subdir, f2_bn) 
+            print(f2)
             # Copy file to new path. 
             shutil.copyfile(f, f2)
             # Unzip file copy.
