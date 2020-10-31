@@ -11,8 +11,10 @@ small-scale comparative genomics and/or phylogenetics analyses.
 Inclusive databases such as the NCBI nr database contain data for so many
 prokaryotic genomes, that obtaining sequences from a representative sampling of
 bacteria or archaea via NCBI's Basic Local Alignment Search Tool (BLAST) or
-other means becomes difficult. This is especially true for highly conserved
-genes. 
+other means becomes difficult without restricting searches to a relatively
+small selection of genomes. However, selected genomes must be representative
+for the taxonomic scope of interest, being relatively complete and high
+    quality, otherwise comparative genomics results will be compromised. 
 
 Zhu *et al*. describe a systematic selection of representative prokaryotic
 genomes in this article:
@@ -60,7 +62,7 @@ script does.
   here via Globus:
     https://app.globus.org/file-manager?origin_id=31acbeb8-c62f-11ea-bef9-0e716405a293&origin_path=%2Fproteins%2F
 
-- Unzip decompress the tar file.
+- Decompress the tar file.
 
 - Clone this repository.
     ```
