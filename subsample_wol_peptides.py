@@ -22,8 +22,13 @@ def remove_rows_with_redundant_taxa(df):
     indices_for_removal = []
     phyla_sampled = []
     for index, row in df.iterrows():
-        if row['phylum'] == '':
+        # Keep all TACK and Asgard archaea.
+        if row['lv2_group'] == 'TACK' or row['lv2_group'] == 'Asgard':
+            pass
+        # Ignore any other genomes not classified at the phylum level.
+        elif row['phylum'] == '':
             indices_for_removal.append(index)
+        # Sample genomes.
         else:
             # Assign a taxon object to the row.
             taxon = None
