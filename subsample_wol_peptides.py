@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Original source: https://github.com/laelbarlow/wol_peptide_subsampler
+# License notice: MIT License, copyright (c) 2020 Lael D. Barlow.
+
 """Script for parsing TSV file from
 https://biocore.github.io/wol/data/genomes/metadata.tsv.bz2 and selecting a
 subset of rows for a manageable number of representatives.
